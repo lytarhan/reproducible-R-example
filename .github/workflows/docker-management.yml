@@ -50,7 +50,8 @@ jobs:
           # Where's the Dockerfile to build this image from?
           file: docker/Dockerfile
           # What should this docker image be called once we are done?
-          tags: jhudsl/reproducible-r
+          # tags: jhudsl/reproducible-r
+          tags: ltarhan/reproducible-r
 
       # Login to Dockerhub
       - name: Login to DockerHub
@@ -68,4 +69,5 @@ jobs:
       # This has an if statement so it will only run it we set dockerhubpush to
       # something not `false` which is the default
         if: ${{ github.event.inputs.dockerhubpush != 'false' }}
-        run: docker push jhudsl/reproducible-r
+        # run: docker push jhudsl/reproducible-r
+        run: docker push ltarhan/reproducible-r
